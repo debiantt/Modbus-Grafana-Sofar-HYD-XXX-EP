@@ -2,7 +2,7 @@
 
 Aplicación python de comunicación vía modbus RTU con inversores SOFAR HYD-XXXX-EP y panel grafana+influxdb de visualización de resultados. Requiere dispositivo de comunicación RTU USB (p.e DSD Tech SH-U10). La aplicación es compatible con Raspberry Pi o similar. Escritura de datos en MQTT (mosquitto) opcional.
 
-![alt text](https://github.com/debiantt/Modbus-Grafana-Sofar-HYD-XXX-EP/tree/main/grafana/sc.png?raw=true)
+![Grafana Dashboard](https://raw.githubusercontent.com/debiantt/Modbus-Grafana-Sofar-HYD-XXX-EP/main/grafana/sc1.png)
 
 
 ## Dependencias
