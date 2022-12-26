@@ -1,0 +1,39 @@
+version: "3.3"
+services:
+  # mosquitto:
+  #   image: eclipse-mosquitto
+  #   network_mode: host
+  #   volumes:
+  #     - ./conf:/mosquitto/conf
+  #     - ./data:/mosquitto/data
+  #     - ./log:/mosquitto/log
+  grafana:
+    container_name: grafana
+    image: grafana/grafana:9.3.1
+    restart: always 
+    depends_on:
+      - influxdb
+    ports: 
+      - ${GF_SERVER_HTTP_PORT}:${GF_SERVER_HTTP_PORT}    
+    environment: 
+      - GF_AUTH_PROXY_ENABLED=${GF_AUTH_PROXY_ENABLED}
+      - GF_SECURITY_ADMIN_USER=${GF_SECURITY_ADMIN_USER}
+      - GF_SECURITY_ADMIN_PASSWORD=${GF_SECURITY_ADMIN_PASSWORD}
+      - GF_SERVER_HTTP_PORT=${GF_SERVER_HTTP_PORT}         
+    volumes:      
+      - ./grafana/data:/var/lib/grafana:rw 
+      - ./grafana/plugins:/var/lib/grafana/plugins:rw
+      - ./conf/grafana.ini:/etc/grafana/grafana.ini
+  influxdb:
+    image: influxdb:2.5
+    container_name: influxdb
+    restart: always
+    ports:
+      - "8086:8086"
+    volumes:
+      - ./influxdb/data:/var/lib/influxdb2:rw
+volumes:  
+  grafana:
+    external: false
+  influxdata:
+    external: false  

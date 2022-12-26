@@ -1,0 +1,38 @@
+{
+  "type": "panel",
+  "name": "ePict Panel",
+  "id": "larona-epict-panel",
+  "info": {
+    "description": "Enter the URL of the image you want, and add some metrics on it.",
+    "author": {
+      "name": "larona"
+    },
+    "keywords": [
+      "pictures",
+      "panel",
+      "superimpose metrics",
+      "metrics on image"
+    ],
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [
+      {
+        "name": "Website",
+        "url": "https://github.com/LucasArona/larona-epict-panel"
+      },
+      {
+        "name": "License",
+        "url": "https://github.com/LucasArona/larona-epict-panel/blob/master/LICENSE"
+      }
+    ],
+    "screenshots": [],
+    "version": "2.0.5",
+    "updated": "2021-12-27"
+  },
+  "dependencies": {
+    "grafanaDependency": ">=8.x.x",
+    "plugins": []
+  }
+}
